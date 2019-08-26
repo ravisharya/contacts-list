@@ -1,29 +1,36 @@
 import React from 'react';
+import {upperFirst} from 'lodash';
 import './SimpleTable.css';
+
+const getTableRow = (row, tableKeys) => (
+    tableKeys.map( key => 
+        <td>{row[key]}</td>
+    )
+);
 
 const SimpleTable = (props) => {
     const tableData = props.data;
-    const tableRows = tableData.map(obj => (
+    const tableKeys = Object.keys(tableData[0]);
+    
+    const tableHeader = (
         <tr>
-            <td>{obj.name}</td>
-            <td>{obj.address}</td>
-            <td>{obj.phone}</td>
-            <td>{obj.email}</td>
-            <td>{obj.note}</td>
+            {tableKeys.map(header => (
+                <th>{upperFirst(header)}</th>
+            ))}
+        </tr>
+    );
+    
+    const tableRows = tableData.map( row => (
+        <tr>
+            {getTableRow(row, tableKeys)}
         </tr>
     ));
+    
     return (
         <table>
-            <tr>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>Note</th>
-            </tr>
+            {tableHeader}
             {tableRows}
         </table>
-
     )
 }
 export default SimpleTable;

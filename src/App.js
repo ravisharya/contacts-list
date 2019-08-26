@@ -52,6 +52,7 @@ class App extends React.Component {
       ...initialFormState
     });
   }
+
   render() {
     return (
       <div className="App">
@@ -59,14 +60,15 @@ class App extends React.Component {
           <fieldset>
             <legend>Enter your Personal information:</legend>
             <label>
-              Name:
+              Name
             </label>
             <br />
             <input
               name="name"
               type="text"
               value={this.state.name}
-              onChange={this.handleInputChange} />
+              onChange={this.handleInputChange}
+              required />
             <br />
             <label>
               Address
@@ -76,15 +78,16 @@ class App extends React.Component {
               name="address"
               type="text"
               value={this.state.address}
-              onChange={this.handleInputChange} />
+              onChange={this.handleInputChange}
+              required />
             <br />
             <label>
-              Phone:
+              Phone
             </label>
             <br />
             <input
               name="phone"
-              type="phone"
+              type="number"
               value={this.state.phone}
               onChange={this.handleInputChange} />
             <br />
@@ -102,18 +105,20 @@ class App extends React.Component {
               Note
             </label>
             <br />
-            <input
+            <textarea
               name="note"
               type="textarea"
               value={this.state.note}
               onChange={this.handleInputChange} />
             <br />
             <input type="submit" value="Submit" className="submit" />
-            <button type="button" onClick={(evt) => this.handleClear()}>Clear</button>
+            <button type="button" onClick={() => this.handleClear()} className="submit">Clear</button>
           </fieldset>
         </form>
         <div className="tableHeading">Details of contacts added</div>
-        <SimpleTable data={this.state.tableData}></SimpleTable>
+        {this.state.tableData.length>0 &&
+          <SimpleTable data={this.state.tableData}></SimpleTable>
+        }
       </div>
     );
   }
