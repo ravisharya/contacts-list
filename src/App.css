@@ -1,0 +1,17 @@
+form {
+  text-align: center;
+}
+input {
+  width: 23rem;
+}
+label {
+  font-weight: 600;
+}
+.submit {
+  width: 10rem;
+}
+.tableHeading {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
