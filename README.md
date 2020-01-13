@@ -1,23 +1,20 @@
-Objective:
+## Objective:
 This project demonstrates a simple React app. It contains a form for adding new contacts and a table to show the added contacts. State exists entirely in the browser. There is no backend for this yet. Main objective is to use and explore following form components in React.
-TextField
-TextArea
-Checkbox
-Input Select
+<ul>
+<li>TextField</li>
+<li>TextArea</li>
+<li>Checkbox</li>
+<li>Input Select</li>
+</ul>
 
-Feature Requirements:
-A user can see a list of contacts in a table.
-A user can create a new contact using a form.
-Fields required- Name, address, phone, email, notes
-Add validation where you think it makes sense.
-Add styling as time allows.
-
-Create your own additional fields such that there is at least 1 of the each of the following:
-TextField
-TextArea
-Checkbox
-Input Select / Picklist
-
+### Feature Requirements:
+<ul>
+<li>A user should be able to see a list of contacts in a table.</li>
+<li>A user should be able to create a new contact using a form.</li>
+<li>Fields required- Name, address, phone, email, notes.</li>
+<li>Add validation where you think it makes sense.</li>
+<li>Add styling as time allows.</li>
+</ul>
 
 ## Available Scripts
 
